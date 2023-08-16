@@ -11,6 +11,12 @@ const app=express();
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
+app.get("/home",(req,res)=>{
+    res.status(200).json({
+        message:"Message from flight server okk !!"
+    })
+})
+
 app.use("/api",apiRoutes);
 
 app.listen(PORT,async ()=>{
